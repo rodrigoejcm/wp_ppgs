@@ -7,26 +7,64 @@ EM POST
 ?>
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
-    <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
-        <header>
-            <h5>
-                <em>
-                    <span class="text-muted author"><?php _e('By', 'b4st'); echo " "; the_author() ?>,</span>
-                    <time  class="text-muted" datetime="<?php the_time('d-m-Y')?>"><?php the_time('jS F Y') ?></time>
-                </em>
-            </h5>
-            <p class="text-muted" style="margin-bottom: 30px;">
-                <i class="fa fa-folder-open-o"></i>&nbsp; <?php _e('Filed under', 'b4st'); ?>: <?php the_category(', ') ?><br/>
-                <i class="fa fa-comment-o"></i>&nbsp; <?php _e('Comments', 'b4st'); ?>: <?php comments_popup_link(__('None', 'b4st'), '1', '%'); ?>
-            </p>
-        </header>
-        <section>
-            <?php the_post_thumbnail(); ?>
-            <?php the_content()?>
-            <?php wp_link_pages(); ?>
-        </section>
-    </article>
-<?php comments_template('/loops/comments.php'); ?>
+<br>
+<br>
+<?php
+
+    $email =  the_field('website');
+    $website = the_field('website');
+
+    if (!get_field('email')){
+        $email = "Não Informado";
+    }
+
+    if (!get_field('website')){
+      $website = "Não Informado";
+    }
+
+
+    ?>
+
+
+<div class="row">
+    <div class="col-md-3">
+        <?php $imagem = wp_get_attachment_url( get_field('foto'), "small" );?>
+        <?php  if (!get_field('foto'))
+          { $imagem = get_bloginfo('template_url') ."/theme/img/user.png"; }
+          ?>
+        <div class="ppgs-box-cp-img-single" style="background-image: url(<?php echo $imagem;?>);">
+        </div>
+    </div>
+    <div class="col-md-7">
+        <p class="corpo-docente-single-p">
+        <?php
+        $docencia = get_the_terms( $post->ID, 'categoria_docencia' );
+        foreach ($docencia as $doc) {
+            echo $doc->name;
+        } ?>
+        </p>
+        <p class="corpo-docente-single-p">E-mail: <span><?php echo $email ?> </span></p>
+        <p class="corpo-docente-single-p">Website: <span><?php echo $website ?></span></p>
+         <a class="corpo-docente-single-p" href="<?php echo get_field('link_cappes'); ?>">Lattes</a>
+    </div>
+</div>
+<br>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+            <h4 class="ppgs-box-cp-header"> Formação: </h4>
+            <br>
+            <?php the_field('formacao'); ?>
+            <hr>
+            <h4 class="ppgs-box-cp-header">
+             Áreas de Interesse:
+            </h4>
+            <br>
+             <?php the_field('area_de_interesse'); ?>
+             <br>
+    </div>
+</div>
+
 <?php endwhile; ?>
 <?php else: ?>
 <?php wp_redirect(get_bloginfo('url').'/404', 404); exit; ?>

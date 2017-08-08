@@ -16,7 +16,7 @@ if (
 	<div class="container">
 	  <div class="row">
 
-	    <div class="<?php if(is_active_sidebar('sidebar-widget-area')): ?>col-sm-8<?php else: ?>col-sm-12<?php endif; ?>">
+	    <div class="<?php if(is_active_sidebar('sidebar-widget-area')): ?>col-sm-8<?php else: ?>col-sm-8<?php endif; ?>">
 
 		<header class="page-header">
         	<?php if ($isAuthor === true): ?>

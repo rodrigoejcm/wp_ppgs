@@ -6,8 +6,15 @@ while ( $loop_evento->have_posts() ) : $loop_evento->the_post(); ?>
 
 <div class="row">
     <div class="col-md-4">
-        <div class="ppgs-evento-img" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?> )">
-        </div>
+         <?php if (has_post_thumbnail()){   ?>
+    <div class="ppgs-evento-img" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?> )"></div>
+  <?php } else{ ?>
+    <div class="ppgs-evento-img" style="background-image: url(' <?php echo get_bloginfo('template_url') ?>/theme/img/ichf.jpg"/>)"></div>
+  <?php } ?>
+
+
+
+
     </div>
     <div class="col-md-6">
             <?php //the_category(', ') ?>

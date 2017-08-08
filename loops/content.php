@@ -8,7 +8,10 @@
             <h3 class="ppgs-box-noticia-header"><a href="<?php the_permalink(); ?>"><?php the_title()?></a></h2>
               <p class="text-muted" style="margin-bottom: 20px;">
                 <i class="fa fa-clock-o"></i>&nbsp; <?php the_time('d-m-Y')?>&nbsp;
-                <?php  $idpost = get_the_ID();   echo ppgs_custom_taxonomies_terms_links( $idpost, 'categoria_noticia') ; ?>
+                <span class="ppgs-cats">
+                    <?php  $idpost = get_the_ID();   echo ppgs_custom_taxonomies_terms_links( $idpost, 'categoria_noticia') ; ?>
+                </span>
+
             </p>
 
         </header>
@@ -27,6 +30,9 @@
 
         </section>
     </article>
+    <br>
+    <hr>
+    <br>
 
 
 <?php endwhile; ?>

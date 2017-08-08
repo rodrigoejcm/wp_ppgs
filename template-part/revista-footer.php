@@ -18,8 +18,21 @@
      <div class="footer-revista-info">
          <img class="ppgs-footer-logo-revista"  src="<?php echo get_bloginfo('template_url') ?>/theme/img/logo-revista-ensaios.png" alt="...">
         <ul>
-            <li>Volume<?php the_field('volume_revista'); ?></li>
-            <li><?php the_field('descricao_volume'); ?></li>
+            <li><?php the_title(); ?> </li>
+
+            <?php
+                if(get_field('descricao_volume')){
+                ?>
+                    <li class="footer-revista-descricao"><?php the_field('descricao_volume'); ?></li>
+                <?php
+                }else{
+                 ?>
+                    <li class="footer-revista-descricao">
+                        Publicação do corpo discente do Programa de Pós-Graduação em Sociologia (PPGS) e das graduações de Ciências Sociais e Sociologia da UFF
+                    </li>
+                <?php
+                }
+            ?>
             <li><a href="<?php echo the_field('link'); ?>">Clique aqui para ler</a></li>
         </ul>
      </div>

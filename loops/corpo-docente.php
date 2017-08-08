@@ -2,24 +2,38 @@
 <?php
 
 
-$cat_args = array( 'taxonomy' => 'tipo_de_docencia');
+$cat_args = array( 'taxonomy' => 'categoria_docencia', 'orderby' => 'slug');
 $categories = get_terms($cat_args);
 
 foreach ($categories as $cat) {
 
-$args_cd = array( 'post_type' => 'corpo_docente', 'tipo_de_docencia' => ($cat -> slug) , 'posts_per_page' => 15 );
+$args_cd = array( 'post_type' => 'corpo_docente', 'categoria_docencia' => ($cat -> slug) , 'posts_per_page' => 15 );
 $loop_cd = new WP_Query( $args_cd );
 
 ?>
 
 <h3><?php echo $cat -> name; ?></h3>
-
+<br>
 <?php
 while ( $loop_cd->have_posts() ) : $loop_cd->the_post(); ?>
 
+<?php if($cat -> slug == '01-coordenacao'  ||  $cat -> slug == '02-vicecoordenacao' ){ ?>
+
+<div class="row">
+    <div class="col-md-8">
+            <h3 class="ppgs-box-cp-header">
+              <a href="<?php the_permalink(); ?>"><?php the_title()?></a>
+            </h3>
+    </div>
+</div>
+
+<?php }else{ ?>
 <div class="row">
     <div class="col-md-2">
         <?php $imagem =  wp_get_attachment_url( get_field('foto'), "small" );?>
+        <?php  if (!get_field('foto'))
+          { $imagem = get_bloginfo('template_url') ."/theme/img/user.png"; }
+          ?>
         <div class="ppgs-box-cp-img" style="background-image: url(<?php echo $imagem;?>);">
         </div>
     </div>
@@ -31,16 +45,16 @@ while ( $loop_cd->have_posts() ) : $loop_cd->the_post(); ?>
              <p class="text-muted ppgs-box-cp-info">
              <?php the_field('e-mail'); ?>
              <br>
-             <?php the_field('link_cappes'); ?>
-            </p>
+             </p>
             <a href="<?php echo the_permalink() ?>">Mais informações</a>
     </div>
 </div>
+<?php } ?>
 <hr>
 <?php endwhile;
 ?>
 
-<br>
+
 
 <?php
 }

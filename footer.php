@@ -16,9 +16,9 @@
     <div class="ppgs-footer-contato">
      <ul>
      <li>Tel.: (21) 2629-2936</li>
-     <li>ppgs@vm.uff.br</li>
+     <li>ppgs.uff.nit@gmail.com</li>
      <li>Av. Prof. Marcos Waldemar de Freitas Reis<br>
-            Bloco O - 3º andar – sala 316
+            Bloco O - 3º andar – sala 313
             Campus do Gragoatá <br>
             São Domingos – Niterói<br>
             24210-201 – RJ</li>

@@ -12,7 +12,7 @@ $loop_noticia = new WP_Query( $args_noticia );
 
 while ( $loop_noticia->have_posts() ) : $loop_noticia->the_post(); ?>
 
-<li><a href=" <?php echo the_permalink(); ?> "><?php the_title(); ?></a></li>
+<li class="ppgs-sidebar-noticias"><a href=" <?php echo the_permalink(); ?> "><?php the_title(); ?></a></li>
 
 
 

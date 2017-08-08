@@ -149,7 +149,7 @@ li{
 }
 
 .carousel-caption{
- bottom: 30% !important;
+ bottom: 25% !important;
 }
 
 .ppgs-slider{
@@ -161,16 +161,16 @@ li{
   color: #157283;
 }
 
-.carousel-caption p{
-  color: #4C4C4C;
-}
-
-
 .carousel-caption h3, .carousel-caption p,  .carousel-caption a  {
   background-color:  rgba(191,197,201,0.7);
   padding: 5px 18px;
   margin-bottom: 10px;
   display: inline;
+}
+
+.carousel-caption p{
+  color: #4C4C4C;
+  line-height: 2;
 }
 
  .carousel-caption a {
@@ -229,6 +229,10 @@ li{
  margin-top: 30px;
 }
 
+.ppgs-cats a{
+  font-size: 12px;
+}
+
 
 /* INDEX - EVENTO */
 
@@ -244,6 +248,7 @@ li{
  background-position: center;
  background-repeat: no-repeat;
  background-size: cover;
+ border: 1px solid #BFC5C9;
 
 }
 
@@ -255,13 +260,14 @@ li{
 .ppgs-box-evento-data{
  margin-bottom: 0;
  margin-top: 2px;
- font-size: 15px;
+ font-size: 13px;
  font-weight: bold;
 
 }
 
 .ppgs-box-evento-local{
  margin-bottom: 0;
+ font-size: 12px;
 }
 
 .ppgs-box-evento-descricao{
@@ -329,6 +335,11 @@ li{
  height: 300px;
 }
 
+.footer-revista-descricao{
+   font-size: 15px;
+    line-height: 1.3;
+}
+
 .footer-revista-capa-img{
 
  height: 260px;
@@ -377,6 +388,15 @@ border-left: 4px solid #468997;
   background-position: center;
 }
 
+.ppgs-box-cp-img-single{
+  height: 120px;
+  width: 120px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid grey;
+}
+
 .ppgs-box-cp-header{
  font-size: 18px;
  margin-bottom: 1px;
@@ -387,6 +407,17 @@ border-left: 4px solid #468997;
     font-size: 12px;
     margin-top: 5px;
 }
+
+.corpo-docente-single-p{
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.corpo-docente-single-p span{
+  font-size: 12px;
+  padding-left: 15px;
+}
+
 
 /* PRODUCAO */
 
@@ -418,4 +449,32 @@ border-left: 4px solid #468997;
  line-height: 1;
  font-size: 14px;
    margin-top: 0px;
+}
+
+
+/* SIDEBAR */
+
+.ppgs-sidebar-noticias{
+  margin-bottom: 8px;
+}
+
+
+/* SIDEBAR */
+
+.ppgs-box-selecao-header{
+ font-size: 18px;
+ margin-bottom: 1px;
+}
+
+.ppgs-box-selecao-header span{
+   font-size: 13px;
+   background-color: #468997;
+   color: white;
+   padding: 4px 6px;
+   width: 65px;
+   display: inline-block;
+}
+
+.ppgs-box-selecao-header span a{
+   color: white;
 }

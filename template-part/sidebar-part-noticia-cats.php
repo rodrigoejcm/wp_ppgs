@@ -13,7 +13,7 @@ foreach ($categories as $cat)
     $nome=$cat -> slug;
 ?>
 
-<li><a href="<?php echo get_term_link( $cat)  ?>" alt="">  <?php echo  ($cat -> name) . " (" .  ($cat -> count)  . ")";   ?> </a></li>
+<li class="ppgs-sidebar-noticias"><a href="<?php echo get_term_link( $cat)  ?>" alt="">  <?php echo  ($cat -> name) . " (" .  ($cat -> count)  . ")";   ?> </a></li>
 
 <?php
 }

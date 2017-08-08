@@ -9,7 +9,7 @@ Loop de Evento (single)
     <article role="article" id="post_<?php the_ID()?>">
         <header>
             <h5>
-                Porducao
+                Produção
               <em>
                 <time  class="text-muted" datetime="<?php the_time('d-m-Y')?>"><?php the_time('d-m-Y') ?></time>
               </em>

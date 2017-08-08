@@ -9,7 +9,7 @@
 
 <?php
 $args = array(
-  'post_type' => array('evento', 'post', 'producao'),
+  'post_type' => array('evento', 'post', 'producao', 'selecao'),
   'category_name' => 'destaque'
 );
 
@@ -25,7 +25,15 @@ if ( $query->have_posts() ) {
 
       <div class="carousel-item <?php if($i == 0){echo "active";}  ?>">
 
-          <img class="d-block center"  src="<?php echo the_post_thumbnail_url(); ?>">
+          <?php if (has_post_thumbnail()){ ?>
+
+            <img class="d-block center"  src="<?php echo the_post_thumbnail_url(); ?>">
+
+          <?php } else { ?>
+
+            <img class="d-block center"  src="<?php echo get_bloginfo('template_url') ."/theme/img/default-destaque.png";  ?>">
+
+          <?php } ?>
 
         <div class="carousel-caption d-none d-md-block">
           <h3><?php the_title(); ?></h3>
@@ -40,8 +48,12 @@ if ( $query->have_posts() ) {
               $resultado =   mb_strimwidth($conteudo,0,140,'...');
             }
 
+            if ($resultado != ""){
           ?>
-          <p><?php echo $resultado?></p>
+          '''<p><?php echo $resultado?></p>
+          <?php
+            }
+          ?>
           <br><br>
           <a href="<?php echo the_permalink(); ?>">Clique aqui para ler mais</a>
         </div>
