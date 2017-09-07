@@ -12,12 +12,9 @@
     </div>
 
     <div class="col-sm-4" id="sidebar" role="navigation">
-    <br><br>
-
        <?php get_template_part('template-part/sidebar-part-noticia-cats'); ?>
        <br>
        <?php get_template_part('template-part/sidebar-part-noticia'); ?>
-
     </div>
 
   </div><!-- /.row -->

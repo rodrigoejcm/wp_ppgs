@@ -38,13 +38,19 @@
   <div class="container">
    <div class="row">
     <div class="col-md-4">
-     <img class="ppgs-footer-logo-outros"  src="<?php echo get_bloginfo('template_url') ?>/theme/img/logo-proppi.png" alt="...">
+     <a target="_blank" href="http://www.uff.br/?q=grupo/pos-graduacao">
+        <img class="ppgs-footer-logo-outros"  src="<?php echo get_bloginfo('template_url') ?>/theme/img/logo-proppi.png" alt="...">
+     </a>
     </div>
     <div class="col-md-4">
-    <img class="ppgs-footer-logo-outros"  src="<?php echo get_bloginfo('template_url') ?>/theme/img/logo-uff.png" alt="...">
+      <a href="http://www.uff.br" target="_blank" >
+        <img class="ppgs-footer-logo-outros"  src="<?php echo get_bloginfo('template_url') ?>/theme/img/logo-uff.png" alt="...">
+      </a>
     </div>
     <div class="col-md-4">
-    <img class="ppgs-footer-logo-outros"  src="<?php echo get_bloginfo('template_url') ?>/theme/img/logo-ichf.png" alt="...">
+      <a href="http://www.ichf.uff.br" target="_blank" >
+        <img class="ppgs-footer-logo-outros"  src="<?php echo get_bloginfo('template_url') ?>/theme/img/logo-ichf.png" alt="...">
+      </a>
     </div>
    </div>
   </div>
@@ -55,3 +61,6 @@
 <?php wp_footer(); ?>
 </body>
 </html>
+
+
+

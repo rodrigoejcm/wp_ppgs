@@ -1,8 +1,25 @@
 
 <?php
-$args_evento = array( 'post_type' => 'evento', 'posts_per_page' => 5 );
-$loop_evento = new WP_Query( $args_evento );
-while ( $loop_evento->have_posts() ) : $loop_evento->the_post(); ?>
+ $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+$args_evento = array( 'post_type' => 'evento',
+   'tax_query' => array(
+        array(
+           'taxonomy' => 'categoria_evento', // My Custom Taxonomy
+            'terms' => 'defesas', // My Taxonomy Term that I wanted to exclude
+            'field' => 'slug', // Whether I am passing term Slug or term ID
+            'operator' => 'NOT IN' // Selection operator - use IN to include, NOT IN to exclude
+        ),
+    ),
+  'posts_per_page' => 5,
+  'paged' => $paged,
+  'meta_key'     => 'data_do_evento',
+   'orderby'     => 'meta_value',
+   'order'       => 'DESC'
+);
+
+
+$wp_query = new WP_Query( $args_evento );
+while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
 <div class="row">
     <div class="col-md-4">
@@ -17,6 +34,7 @@ while ( $loop_evento->have_posts() ) : $loop_evento->the_post(); ?>
 
     </div>
     <div class="col-md-6">
+
             <?php //the_category(', ') ?>
             <h3 class="ppgs-box-noticia-header"><a href="<?php the_permalink(); ?>"><?php the_title()?></a></h3>
             <p class="text-muted" style="margin-bottom: 20px;">
@@ -36,6 +54,8 @@ while ( $loop_evento->have_posts() ) : $loop_evento->the_post(); ?>
 <br><br>
 
 <?php endwhile; ?>
+
+
 
 <?php if ( function_exists('b4st_pagination') ) { b4st_pagination(); } else if ( is_paged() ) { ?>
   <ul class="pagination">

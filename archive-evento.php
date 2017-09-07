@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php include(locate_template('template-part/title-taxonomy-evento.php')); ?>
 
 <div class="container">
   <div class="row">
@@ -10,6 +11,8 @@
     </div>
 
     <div class="col-sm-4" id="sidebar" role="navigation">
+       <?php get_template_part('template-part/sidebar-part-evento-cats'); ?>
+       <br>
        <?php get_template_part('template-part/sidebar-part-noticia'); ?>
     </div>
 

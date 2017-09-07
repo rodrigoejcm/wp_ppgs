@@ -1,3 +1,4 @@
+<div class="ppgs-sidebar-box">
 <h4>Eventos</h4>
 <ul>
 <?php
@@ -19,3 +20,4 @@ foreach ($categories as $cat)
 }
  ?>
 </ul>
+</div>

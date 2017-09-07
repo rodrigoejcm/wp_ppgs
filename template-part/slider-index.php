@@ -50,7 +50,7 @@ if ( $query->have_posts() ) {
 
             if ($resultado != ""){
           ?>
-          '''<p><?php echo $resultado?></p>
+          <p><?php echo $resultado?></p>
           <?php
             }
           ?>
@@ -65,6 +65,46 @@ if ( $query->have_posts() ) {
         $i ++;
 
     }
+
+}
+else{
+
+       $args = array(
+        'post_type' => array('slide_fotos'),
+        'category_name' => 'destaque'
+      );
+
+      $query = new WP_Query( $args );
+
+      if ( $query->have_posts() ) {
+
+        $i = 0;
+        while ( $query->have_posts() ) {
+
+            $query->the_post();
+            ?>
+
+          <?php $imagem_slide =  wp_get_attachment_url( get_field('foto') );?>
+          <div class="carousel-item carousel-item-slide-foto <?php if($i == 0){echo "active";}  ?>">
+
+              <img class="d-block"  src="<?php echo $imagem_slide;?>">
+
+              <div class="carousel-caption carousel-caption-slide-fotos d-none d-md-block">
+                <P><?php the_title(); ?></P>
+                <p class="carousel-slide-foto-responsavel">Foto por: <?php echo get_field('responsavel');  ?> </p>
+              </div>
+          </div>
+
+
+
+            <?php
+            $i ++;
+
+    }
+
+}
+
+
 
 }
 

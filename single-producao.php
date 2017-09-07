@@ -1,3 +1,4 @@
+
 <?php get_header(); ?>
 
 <div class="ppgs-titulo-pagina">
@@ -12,21 +13,23 @@
   </div>
 </div>
 
-<br><br>
 <div class="container">
   <div class="row">
 
     <div class="<?php if(is_active_sidebar('sidebar-widget-area')): ?>col-sm-8<?php else: ?>col-sm-8<?php endif; ?>">
       <div id="content" role="main">
-            <?php get_template_part('loops/producao-academica', 'single'); ?>
+        <?php get_template_part('loops/producao-academica-single'); ?>
       </div><!-- /#content -->
     </div>
 
     <div class="col-sm-4" id="sidebar" role="navigation">
-       <?php get_sidebar(); ?>
+       <?php get_template_part('template-part/sidebar-part-producao-cats'); ?>
+       <br>
+       <?php get_template_part('template-part/sidebar-part-noticia'); ?>
     </div>
 
   </div><!-- /.row -->
 </div><!-- /.container -->
 
 <?php get_footer(); ?>
+

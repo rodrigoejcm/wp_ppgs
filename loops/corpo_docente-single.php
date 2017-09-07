@@ -40,7 +40,7 @@ EM POST
         <?php
         $docencia = get_the_terms( $post->ID, 'categoria_docencia' );
         foreach ($docencia as $doc) {
-            echo $doc->name;
+            echo $doc->name." ";
         } ?>
         </p>
         <p class="corpo-docente-single-p">E-mail: <span><?php echo $email ?> </span></p>

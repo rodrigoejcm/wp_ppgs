@@ -28,7 +28,7 @@
                 }else{
                  ?>
                     <li class="footer-revista-descricao">
-                        Publicação do corpo discente do Programa de Pós-Graduação em Sociologia (PPGS) e das graduações de Ciências Sociais e Sociologia da UFF
+                        Publicação de Alunos do Programa de Pós-Graduação em Sociologia (PPGS) e das graduações de Ciências Sociais e Sociologia da UFF
                     </li>
                 <?php
                 }

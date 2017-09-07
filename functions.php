@@ -15,4 +15,5 @@ All the functions are in the PHP pages in the `functions/` folder.
 	require get_template_directory() . '/functions/remove-query-string.php';
 	require get_template_directory() . '/functions/admin_columns.php';
 	require get_template_directory() . '/functions/taxonomy.php';
+	require get_template_directory() . '/functions/admin-menu.php';
 

@@ -5,7 +5,7 @@ $args_noticia = array( 'post_type' => 'post', 'posts_per_page' => 3 );
 $loop_noticia = new WP_Query( $args_noticia );
 
 ?>
-
+<div class="ppgs-sidebar-box">
 <h4>Ultimas Notícias</h4>
 <ul>
 <?php
@@ -18,3 +18,4 @@ while ( $loop_noticia->have_posts() ) : $loop_noticia->the_post(); ?>
 
 <?php endwhile; ?>
 </ul>
+</div>

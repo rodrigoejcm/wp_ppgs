@@ -1,3 +1,4 @@
+<div class="ppgs-sidebar-box">
 <h4>Notícias</h4>
 <ul>
 <?php
@@ -13,9 +14,10 @@ foreach ($categories as $cat)
     $nome=$cat -> slug;
 ?>
 
-<li class="ppgs-sidebar-noticias"><a href="<?php echo get_term_link( $cat)  ?>" alt="">  <?php echo  ($cat -> name) . " (" .  ($cat -> count)  . ")";   ?> </a></li>
+<li><a href="<?php echo get_term_link( $cat)  ?>" alt="">  <?php echo  ($cat -> name) . " (" .  ($cat -> count)  . ")";   ?> </a></li>
 
 <?php
 }
  ?>
 </ul>
+</div>

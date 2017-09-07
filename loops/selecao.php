@@ -1,13 +1,22 @@
 
 <?php
-$args_evento = array( 'post_type' => 'selecao', 'posts_per_page' => 10 );
-$loop_evento = new WP_Query( $args_evento );
-while ( $loop_evento->have_posts() ) : $loop_evento->the_post(); ?>
+$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+$args_query = array( 'post_type' => 'selecao', 'posts_per_page' => 10,  'paged' => $paged);
+
+$vari = single_cat_title('',false);
+
+if (!empty($vari)){
+  $args_query['ano_periodo'] = $vari ;
+}
+
+
+$wp_query = new WP_Query( $args_query );
+while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
 <div>
 
             <h3 class="ppgs-box-selecao-header">
-              <span><?php  $idpost = get_the_ID();   echo ppgs_custom_taxonomies_terms_links( $idpost, 'periodo_selecao') ; ?></span>
+              <span><?php  $idpost = get_the_ID();   echo ppgs_custom_taxonomies_terms_links( $idpost, 'ano_periodo') ; ?></span>
               <a href="<?php the_permalink(); ?>"><?php the_title()?></a>
             </h3>
 </div>

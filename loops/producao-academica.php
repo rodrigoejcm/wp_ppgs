@@ -1,8 +1,17 @@
 
 <?php
-$args_evento = array( 'post_type' => 'producao',  'categoria_producao' => 'prod-acedemica' ,'posts_per_page' => 5 );
-$loop_evento = new WP_Query( $args_evento );
-while ( $loop_evento->have_posts() ) : $loop_evento->the_post(); ?>
+
+$args_query = array( 'post_type' => 'producao' ,'posts_per_page' => 5 );
+
+$vari = single_cat_title('',false);
+
+if (!empty($vari)){
+  $args_query['cat_producao_academica'] = $vari ;
+}
+
+
+$wp_query = new WP_Query( $args_query );
+while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
 <div class="row">
     <div class="col-md-4">

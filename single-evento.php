@@ -6,7 +6,7 @@
     <div class="col-md-12">
     <br>
      <h1>Eventos</h1>
-     <h4><?php the_title(); ?></h4>
+     <h4><?php  $idpost = get_the_ID();   echo ppgs_custom_taxonomies_terms_links_space( $idpost, 'categoria_evento') ; ?> : <?php the_title(); ?></h4>
     </div>
    </div>
   </div>
@@ -21,7 +21,7 @@
       </div><!-- /#content -->
     </div>
    <div class="col-sm-4" id="sidebar" role="navigation">
-        <br><br>
+
         <?php get_template_part('template-part/sidebar-part-evento-cats'); ?>
        <br>
        <?php get_template_part('template-part/sidebar-part-evento'); ?>

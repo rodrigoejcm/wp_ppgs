@@ -19,8 +19,13 @@ EM POST
             </p>
         </header>
         <section>
-            <img src="<?php echo the_post_thumbnail_url(); ?>" class="img-fluid">
-            <br><br>
+            <?php if(has_post_thumbnail()):?>
+                <div>
+                    <div style="width: 100%; height: 200px; background-position: center; background-size: 100%;
+                    background-image: url('<?php echo get_the_post_thumbnail_url(); ?>'); background-repeat: no-repeat;"></div>
+                    <br>
+               </div>
+            <?php endif; ?>
             <?php the_content()?>
             <?php wp_link_pages(); ?>
         </section>
