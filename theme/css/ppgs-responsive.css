@@ -1,0 +1,126 @@
+@media (max-width: 600px)
+{
+
+
+        /* HEADER*/
+        .ppgs-logo-header img {
+        width: 140px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        }
+
+        /* MENU*/
+        .navbar-toggler-right {
+        top: -3.6rem;
+        }
+        .navbar-light .navbar-toggler {
+        border: none;
+        }
+
+        .navbar-collapse{
+        background-color: #BFC5C9;
+        width: 100vw;
+        }
+
+        .navbar {
+        padding: unset;
+        }
+
+        /* INDEX - EVENTOS*/
+        .ppgs-box-evento {
+        height: unset;
+        }
+
+        .ppgs-box-evento-header {
+        margin-top: 8px;
+        }
+
+        /* SLIDER*/
+
+        .carousel-caption h3, .carousel-caption p {
+        background-color: rgba(191,197,201,0.9);
+        padding: 0px 1px;
+        display: block;
+        text-align: center;
+        }
+
+        .carousel-caption h3 {
+        font-size: 24px;
+        }
+
+        .carousel-caption {
+        right: unset;
+        left: unset;
+        }
+
+        .carousel-caption h3 + br {
+        display: none;
+        }
+        .carousel-caption h3 + br + br {
+        display: none;
+        }
+
+        .carousel-caption p {
+        display: none;
+        }
+
+        .d-none {
+        display: unset !important;
+        }
+
+        /* footer*/
+
+        #wpgmza_map{
+            display: unset;
+            overflow: unset;
+            width: unset;
+            float: unset;
+        }
+
+        .ppgs-footer-topo{
+                height: unset;
+        }
+
+        .ppgs-footer-topo .ppgs-footer-contato ul {
+                margin-top: 10px;
+                padding-left: unset;
+                margin-left: unset;
+                text-align: center;
+        }
+
+        .ppgs-footer-logo-revista {
+            margin-left: unset;
+        }
+
+
+         .footer-revista-info img {
+                width: 100%;
+                padding: 0px 20px;
+        }
+
+        .footer-revista-info ul {
+            margin-left: unset;
+            text-align: center;
+        }
+
+
+        .ppgs-titulo-pagina h4{
+                margin-top: 10px:
+                font-size: 16px;
+        }
+
+        .ppgs-titulo-pagina h1{
+                margin-top: 10px:
+                font-size: 30px;
+        }
+
+
+        header h5 {
+                font-size: 14px;
+        }
+
+        .ppgs-box-noticia-header{
+                margin-top: 10px;
+        }
+
+}

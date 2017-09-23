@@ -84,4 +84,3 @@ function ppgs_get_terms_by_post_type( $taxonomies, $post_types ) {
 
 }
 
-?>

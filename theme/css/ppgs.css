@@ -348,12 +348,16 @@ border-radius: 10px;
 
 }
 
+#wpgmza_map{
+  display: unset;
+  overflow: unset;
+  width: unset;
+  float: unset;
+}
+
 .ppgs-footer-topo .ppgs-footer-contato{
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+
+    margin-top: 40px;
 }
 
 .ppgs-footer-topo .ppgs-footer-contato ul{

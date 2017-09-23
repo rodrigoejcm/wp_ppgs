@@ -24,9 +24,15 @@ Loop de Evento (single)
             </h5>
         </header>
         <section>
-            <div class="">
-                 <img src=" <?php echo the_post_thumbnail_url(); ?>" class="img-fluid">
-            </div>
+
+          <?php if(has_post_thumbnail()):?>
+                <div>
+                    <div style="width: 100%; height: 200px; background-position: center; background-size: 100%;
+                    background-image: url('<?php echo get_the_post_thumbnail_url(); ?>'); background-repeat: no-repeat;"></div>
+                    <br>
+               </div>
+            <?php endif; ?>
+
             <br>
             <?php the_content( __( '&hellip; ' . __('Continue reading', 'b4st' ) . ' <i class="glyphicon glyphicon-arrow-right"></i>', 'b4st' ) ); ?>
         </section>

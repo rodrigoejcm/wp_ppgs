@@ -7,7 +7,7 @@ $categories = get_terms($cat_args);
 
 foreach ($categories as $cat) {
 
-$args_cd = array( 'post_type' => 'corpo_docente', 'categoria_docencia' => ($cat -> slug) , 'posts_per_page' => 15 );
+$args_cd = array( 'post_type' => 'corpo_docente', 'categoria_docencia' => ($cat -> slug) , 'posts_per_page' => 15,  'orderby' => 'title',  'order' => 'ASC' );
 $loop_cd = new WP_Query( $args_cd );
 
 ?>

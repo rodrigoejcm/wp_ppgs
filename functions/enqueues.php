@@ -16,6 +16,9 @@ function b4st_enqueues() {
 	wp_register_style('ppgs-css', get_template_directory_uri() . '/theme/css/ppgs.css', false, null);
 	wp_enqueue_style('ppgs-css');
 
+	wp_register_style('ppgs-resp-css', get_template_directory_uri() . '/theme/css/ppgs-responsive.css', false, null);
+	wp_enqueue_style('ppgs-resp-css');
+
 	/* Scripts */
 
 	wp_enqueue_script( 'jquery' );

@@ -9,7 +9,7 @@
 
 <?php
 $args = array(
-  'post_type' => array('evento', 'post', 'producao', 'selecao'),
+  'post_type' => array('evento', 'post', 'producao','dissertacao', 'selecao'),
   'category_name' => 'destaque'
 );
 
